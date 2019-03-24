@@ -1,13 +1,26 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerCameraMovement : MonoBehaviour {
   public float speed = 2f;
 
   private Rigidbody rb;
+  private Vector3 startPosition;
 
   void Start() {
     this.rb = this.GetComponent<Rigidbody>();
+    this.startPosition = this.rb.position;
+
+    EventSystem.Subscribe(
+      GameManager.GameStateChangeEvent,
+      this.OnGameStateChangeEvent);
+  }
+
+  void Destroy() {
+    EventSystem.Unsubscribe(
+      GameManager.GameStateChangeEvent,
+      this.OnGameStateChangeEvent);
   }
 
   void FixedUpdate() {
@@ -19,5 +32,9 @@ public class PlayerCameraMovement : MonoBehaviour {
 
       this.rb.velocity = movement;
     }
+  }
+
+  private void OnGameStateChangeEvent(object sender, EventArgs e) {
+    this.rb.MovePosition(startPosition);
   }
 }

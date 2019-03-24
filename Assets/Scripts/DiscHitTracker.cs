@@ -14,9 +14,9 @@ public class DiscHitTracker : MonoBehaviour {
   void OnTriggerEnter(Collider other) {
     if (other.CompareTag(DiscEndTag)) {
       if (this.Passed)
-        Debug.Log("Passed!");
+        GameManager.Singleton.PassedDisc();
       else
-        Debug.Log("Failed!");
+        GameManager.Singleton.StopGame();
 
       Object.Destroy(this.gameObject);
     }

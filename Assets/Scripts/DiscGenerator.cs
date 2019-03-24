@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class DiscGenerator : MonoBehaviour {
   [SerializeField] private GameObject[] discPrefabs;
@@ -11,6 +12,16 @@ public class DiscGenerator : MonoBehaviour {
 
   void Start() {
     this.currentEmitFrequency = this.beginEmitFrequency;
+
+    EventSystem.Subscribe(
+      GameManager.GameStateChangeEvent,
+      this.OnGameStateChangeEvent);
+  }
+
+  void Destroy() {
+    EventSystem.Unsubscribe(
+      GameManager.GameStateChangeEvent,
+      this.OnGameStateChangeEvent);
   }
 
   void Update() {
@@ -34,5 +45,9 @@ public class DiscGenerator : MonoBehaviour {
       discPrefab,
       this.transform.position,
       this.transform.rotation);
+  }
+
+  private void OnGameStateChangeEvent(object sender, EventArgs e) {
+    this.currentEmitFrequency = this.beginEmitFrequency;
   }
 }
