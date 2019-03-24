@@ -18,6 +18,7 @@ public class DiscHitTracker : MonoBehaviour {
       else
         GameManager.Singleton.StopGame();
 
+      this.gameObject.SetActive(false);
       Object.Destroy(this.gameObject);
     }
   }
