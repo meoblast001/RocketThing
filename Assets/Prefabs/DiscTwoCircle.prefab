@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3874014663004943105}
   - component: {fileID: 7726406707813604202}
-  - component: {fileID: 5539132714977151656}
   - component: {fileID: 6860876459496090132}
+  - component: {fileID: 5539132714977151656}
   - component: {fileID: 5345712319520495980}
   m_Layer: 0
   m_Name: DiscTwoCircle
@@ -53,18 +53,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5539132714977151656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869471003382430567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91f47f4c8bd50decdb2a13c9220d5c3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &6860876459496090132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78,6 +66,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 4, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5539132714977151656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869471003382430567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f47f4c8bd50decdb2a13c9220d5c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5345712319520495980
 MonoBehaviour:
   m_ObjectHideFlags: 0
