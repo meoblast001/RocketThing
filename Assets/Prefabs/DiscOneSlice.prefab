@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 170116368669464178}
   m_Layer: 0
   m_Name: DiscOneSlice
-  m_TagString: Untagged
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zMovement: -6
+  maxAngularVelocityMagnitude: 1.5
 --- !u!114 &170116368669464178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +157,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5871611513152719566}
     m_Modifications:
+    - target: {fileID: 100000, guid: faf586840fa481accadc07bc69400903, type: 3}
+      propertyPath: m_Name
+      value: DiscOneSlice
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: faf586840fa481accadc07bc69400903, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -199,10 +204,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: faf586840fa481accadc07bc69400903, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: faf586840fa481accadc07bc69400903, type: 3}
-      propertyPath: m_Name
-      value: DiscOneSlice
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: faf586840fa481accadc07bc69400903, type: 3}
       propertyPath: m_ReceiveShadows

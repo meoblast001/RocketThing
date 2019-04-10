@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DiscHitTracker : MonoBehaviour {
-  public const string DiscEndTag = "DiscEnd";
-
   public bool Passed { get; set; }
 
   void Start() {
@@ -12,7 +10,7 @@ public class DiscHitTracker : MonoBehaviour {
   }
 
   void OnTriggerEnter(Collider other) {
-    if (other.CompareTag(DiscEndTag)) {
+    if (other.CompareTag(Tags.DiscEnd)) {
       if (this.Passed)
         GameManager.Singleton.PassedDisc();
       else

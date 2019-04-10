@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5345712319520495980}
   m_Layer: 0
   m_Name: DiscTwoCircle
-  m_TagString: Untagged
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zMovement: -6
+  maxAngularVelocityMagnitude: 1.5
 --- !u!114 &5345712319520495980
 MonoBehaviour:
   m_ObjectHideFlags: 0

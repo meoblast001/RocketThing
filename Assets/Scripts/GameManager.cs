@@ -27,6 +27,10 @@ public class GameManager : MonoBehaviour {
   }
 
   public void StartGame() {
+    foreach (var disc in GameObject.FindGameObjectsWithTag(Tags.Disc)) {
+      GameObject.Destroy(disc);
+    }
+
     this.PassedDiscs = 0;
     Time.timeScale = this.restoreTimeScale;
     this.Running = true;
