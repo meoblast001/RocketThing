@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class DiscGenerator : MonoBehaviour {
   [SerializeField] private GameObject[] discPrefabs;
-  [SerializeField] private float beginEmitFrequency = 5f;
-  [SerializeField] private float endEmitFrequency = 2f;
-  [SerializeField] private float emitFrequncyChangeRate = 0.05f;
+  [SerializeField] private float beginEmitFrequency = 2f;
+  [SerializeField] private float endEmitFrequency = 1.2f;
+  [SerializeField] private float emitFrequncyChangeRate = 0.01f;
   [SerializeField] private float beginDiscSpeed = -6f;
-  [SerializeField] private float endDiscSpeed = -10f;
-  [SerializeField] private float discSpeedChangeRate = 0.05f;
+  [SerializeField] private float endDiscSpeed = -12f;
+  [SerializeField] private float discSpeedChangeRate = 0.005f;
 
   private float currentEmitFrequency;
   private float currentDiscSpeed;

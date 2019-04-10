@@ -2045,8 +2045,8 @@ MonoBehaviour:
   - {fileID: 1869471003382430567, guid: 4253e064303afda4493f45443c513ada, type: 3}
   - {fileID: 7610808914534824835, guid: 7e4e60ad0469b9a5eb103590cdb51f03, type: 3}
   beginEmitFrequency: 2
-  endEmitFrequency: 1.5
-  emitFrequncyChangeRate: 0.05
+  endEmitFrequency: 1.2
+  emitFrequncyChangeRate: 0.01
   beginDiscSpeed: -6
-  endDiscSpeed: -10
-  discSpeedChangeRate: 0.05
+  endDiscSpeed: -12
+  discSpeedChangeRate: 0.005
