@@ -8,6 +8,22 @@ public class PlayerCameraMovement : MonoBehaviour {
   private Rigidbody rb;
   private Vector3 startPosition;
 
+  private float Horizontal {
+    get {
+      var axis = Input.GetAxis("Horizontal");
+      var mouse = Input.GetAxis("Mouse X");
+      return axis + mouse;
+    }
+  }
+
+  private float Vertical {
+    get {
+      var axis = Input.GetAxis("Vertical");
+      var mouse = Input.GetAxis("Mouse Y");
+      return axis + mouse;
+    }
+  }
+
   void Start() {
     this.rb = this.GetComponent<Rigidbody>();
     this.startPosition = this.rb.position;
@@ -24,8 +40,8 @@ public class PlayerCameraMovement : MonoBehaviour {
   }
 
   void FixedUpdate() {
-    var horizontal = Input.GetAxis("Horizontal") * this.speed;
-    var vertical = Input.GetAxis("Vertical") * this.speed;
+    var horizontal = this.Horizontal * this.speed;
+    var vertical = this.Vertical * this.speed;
     if (horizontal != 0f || vertical != 0f) {
       var movement = new Vector3(horizontal, vertical, 0f);
       movement = Vector3.ClampMagnitude(movement, this.speed);
