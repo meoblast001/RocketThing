@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour {
     Time.timeScale = 0f;
   }
 
+  void Update() {
+    if (Input.GetButtonDown("Cancel"))
+      this.StopGame();
+  }
+
   void Destroy() {
     Singleton = null;
   }
@@ -34,6 +39,7 @@ public class GameManager : MonoBehaviour {
     this.PassedDiscs = 0;
     Time.timeScale = this.restoreTimeScale;
     this.Running = true;
+    this.SetCursorLock(true);
     EventSystem.Publish(this, GameStateChangeEvent);
     EventSystem.Publish(this, PassedDiscEvent);
   }
@@ -41,11 +47,17 @@ public class GameManager : MonoBehaviour {
   public void StopGame() {
     Time.timeScale = 0f;
     this.Running = false;
+    this.SetCursorLock(false);
     EventSystem.Publish(this, GameStateChangeEvent);
   }
 
   public void PassedDisc() {
     ++this.PassedDiscs;
     EventSystem.Publish(this, PassedDiscEvent);
+  }
+
+  private void SetCursorLock(bool locked) {
+    Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.None;
+    Cursor.visible = !locked;
   }
 }
