@@ -12,7 +12,7 @@ public class GameOverMenu : MonoBehaviour {
       this.OnGameStateChangeEvent);
   }
 
-  void Destroy() {
+  void OnDestroy() {
     EventSystem.Unsubscribe(
       GameManager.GameStateChangeEvent,
       this.OnGameStateChangeEvent);

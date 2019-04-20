@@ -13,7 +13,7 @@ public class PassedDiscCount : MonoBehaviour {
     EventSystem.Subscribe(GameManager.PassedDiscEvent, this.OnPassedDiscEvent);
   }
 
-  void Destroy() {
+  void OnDestroy() {
     EventSystem.Unsubscribe(
       GameManager.PassedDiscEvent,
       this.OnPassedDiscEvent);

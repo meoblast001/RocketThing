@@ -23,7 +23,7 @@ public class DiscGenerator : MonoBehaviour {
       this.OnGameStateChangeEvent);
   }
 
-  void Destroy() {
+  void OnDestroy() {
     EventSystem.Unsubscribe(
       GameManager.GameStateChangeEvent,
       this.OnGameStateChangeEvent);

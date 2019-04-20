@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
       this.StopGame();
   }
 
-  void Destroy() {
+  void OnDestroy() {
     Singleton = null;
   }
 
