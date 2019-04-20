@@ -51,6 +51,7 @@ public class PlayerCameraMovement : MonoBehaviour {
   }
 
   private void OnGameStateChangeEvent(object sender, EventArgs e) {
+    this.rb.velocity = new Vector3(0f, 0f, 0f);
     this.rb.MovePosition(startPosition);
   }
 }
